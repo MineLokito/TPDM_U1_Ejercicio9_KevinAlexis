@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         calcular?.setOnClickListener {
 
             layo=findViewById(R.id.layin)
+            layo?.removeAllViews()
             var vectorT= Vector<TextView>()
             aux = camponumero?.text.toString().toInt()
             wow=campomulti?.text.toString().toInt()
@@ -47,7 +48,8 @@ class MainActivity : AppCompatActivity() {
                         operacion= aux*multip
 
                         var rbd = TextView(this)
-                        rbd.setText("$wow"+"x"+"$it"+"="+operacion)
+                        rbd.setText("$aux"+"x"+"$it"+"="+operacion)
+                        rbd.textSize= 20F
                         layo?.addView(rbd)
                     }
                 multip++
